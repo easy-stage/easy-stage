@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/private/', '/api/'],
       },
     ],
-    sitemap: 'https://zoekjestage.nl/sitemap.xml',
+    sitemap: 'https://easystage.nl/sitemap.xml',
   }
 }

@@ -1,4 +1,4 @@
-# SEO Optimization Guide - Zoek je stage
+# SEO Optimization Guide - easystage.nl
 
 ## ✅ Implemented SEO Features
 
@@ -115,7 +115,7 @@ Create these image files in the `public` folder:
 ## 🚀 Quick Wins
 
 1. **Submit your sitemap** to Google Search Console at:
-   `https://zoekjestage.nl/sitemap.xml`
+   `https://easystage.nl/sitemap.xml`
 
 2. **Update social media handles** in the structured data when you create them
 
@@ -130,7 +130,7 @@ Create these image files in the `public` folder:
 ## 📱 Social Media Setup
 
 Update these once you create social accounts:
-- Twitter: Currently set as `@zoekjestage`
+- Twitter: Currently set as `@easystage`
 - LinkedIn: Company page URL
 - Instagram: Profile URL (add to Organization schema)
 

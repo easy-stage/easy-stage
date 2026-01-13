@@ -13,16 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://zoekjestage.nl'),
+  metadataBase: new URL('https://easystage.nl'),
   title: {
-    default: 'Zoek je stage - Vind de perfecte stage op basis van jouw interesses',
-    template: '%s | Zoek je stage'
+    default: 'easystage.nl - Vind de perfecte stage op basis van jouw interesses',
+    template: '%s | easystage.nl'
   },
-  description: 'Zoek je stage helpt studenten de perfecte stage te vinden op basis van hun interesses, studierichting en ambities. Ontdek stageplekken bij topbedrijven in Nederland.',
+  description: 'easystage.nl helpt studenten de perfecte stage te vinden op basis van hun interesses, studierichting en ambities. Ontdek stageplekken bij topbedrijven in Nederland.',
   keywords: ['stage zoeken', 'stage vacatures', 'stage vinden', 'stageplekken', 'stagebegeleiding', 'stage nederland', 'internship', 'student stage', 'stage platform'],
-  authors: [{ name: 'Zoek je stage' }],
-  creator: 'Zoek je stage',
-  publisher: 'Zoek je stage',
+  authors: [{ name: 'easystage.nl' }],
+  creator: 'easystage.nl',
+  publisher: 'easystage.nl',
   formatDetection: {
     email: false,
     address: false,
@@ -31,25 +31,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'nl_NL',
-    url: 'https://zoekjestage.nl',
-    siteName: 'Zoek je stage',
-    title: 'Zoek je stage - Vind de perfecte stage op basis van jouw interesses',
-    description: 'Zoek je stage helpt studenten de perfecte stage te vinden op basis van hun interesses, studierichting en ambities. Ontdek stageplekken bij topbedrijven in Nederland.',
+    url: 'https://easystage.nl',
+    siteName: 'easystage.nl',
+    title: 'easystage.nl - Vind de perfecte stage op basis van jouw interesses',
+    description: 'easystage.nl helpt studenten de perfecte stage te vinden op basis van hun interesses, studierichting en ambities. Ontdek stageplekken bij topbedrijven in Nederland.',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Zoek je stage - Stage platform voor studenten',
+        alt: 'easystage.nl - Stage platform voor studenten',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Zoek je stage - Vind de perfecte stage op basis van jouw interesses',
-    description: 'Zoek je stage helpt studenten de perfecte stage te vinden op basis van hun interesses, studierichting en ambities.',
+    title: 'easystage.nl - Vind de perfecte stage op basis van jouw interesses',
+    description: 'easystage.nl helpt studenten de perfecte stage te vinden op basis van hun interesses, studierichting en ambities.',
     images: ['/og-image.png'],
-    creator: '@zoekjestage',
+    creator: '@easystage',
   },
   robots: {
     index: true,
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://zoekjestage.nl',
+    canonical: 'https://easystage.nl',
   },
   category: 'education',
 };

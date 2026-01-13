@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: 'Stages',
-  description: 'Bekijk alle beschikbare stageplekken in Nederland. Binnenkort beschikbaar op Zoek je stage.',
+  description: 'Bekijk alle beschikbare stageplekken in Nederland. Binnenkort beschikbaar op easystage.nl.',
 };
 
 export default function StagesPage() {
@@ -64,7 +64,7 @@ export default function StagesPage() {
       <footer className="relative z-10 py-8 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center">
           <p className="text-slate-600 text-sm">
-            © 2026 Zoek je stage • Alle rechten voorbehouden
+            © 2026 easystage.nl • Alle rechten voorbehouden
           </p>
         </div>
       </footer>

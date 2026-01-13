@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next'
  
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Zoek je stage - Vind de perfecte stage',
-    short_name: 'Zoek je stage',
-    description: 'Zoek je stage helpt studenten de perfecte stage te vinden op basis van hun interesses',
+    name: 'easystage.nl - Vind de perfecte stage',
+    short_name: 'easystage.nl',
+    description: 'easystage.nl helpt studenten de perfecte stage te vinden op basis van hun interesses',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

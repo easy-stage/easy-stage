@@ -1,16 +1,16 @@
-# Business Plan: Zoek je stage
+# Business Plan: easystage.nl
 ## Internship Aggregation & Search Platform
 
 **Version:** 1.0  
 **Date:** January 2026  
 **Location:** Netherlands  
-**Website:** zoekjestage.nl
+**Website:** easystage.nl
 
 ---
 
 ## Executive Summary
 
-**Zoek je stage** is a comprehensive internship aggregation platform that consolidates internship opportunities from across the Netherlands into a single, searchable database. By scraping public internship listings from various sources and providing an intelligent search engine with real-time notifications, we solve the fragmented internship discovery problem for Dutch students.
+**easystage.nl** is a comprehensive internship aggregation platform that consolidates internship opportunities from across the Netherlands into a single, searchable database. By scraping public internship listings from various sources and providing an intelligent search engine with real-time notifications, we solve the fragmented internship discovery problem for Dutch students.
 
 ### Mission Statement
 To empower students to find their ideal internship by providing instant access to all available opportunities in the Netherlands, personalized to their interests and needs.
@@ -613,8 +613,8 @@ Key clauses:
 5. Pitch to 2-3 university career centers
 
 **Contact:**
-- Website: zoekjestage.nl
-- Email: info@zoekjestage.nl
+- Website: easystage.nl
+- Email: info@easystage.nl
 
 ---
 

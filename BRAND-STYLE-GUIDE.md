@@ -1,4 +1,4 @@
-# Brand Style Guide: Zoek je stage
+# Brand Style Guide: easystage.nl
 ## Minimalist, Clean & Focused
 
 **Last Updated:** January 2026  
@@ -210,7 +210,7 @@ Border Radius: 8px (or 24px for pill shape)
 Hover: Darken 10% (#0052CC)
 Transition: 150ms ease
 
-Example: "Zoek je stage"
+Example: "easystage.nl"
 ```
 
 #### Secondary Button
@@ -513,7 +513,7 @@ No buttons in nav - keeps it clean
 ```
 ┌─────────────────────────────────────────┐
 │                                         │
-│   © 2026 Zoek je stage • Alle rechten  │
+│   © 2026 easystage.nl • Alle rechten  │
 │              voorbehouden               │
 │                                         │
 └─────────────────────────────────────────┘
