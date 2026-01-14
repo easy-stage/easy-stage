@@ -5,7 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        disallow: '/',
+        allow: '/',
+        disallow: ['/api/', '/admin/'],
       },
     ],
     sitemap: 'https://easystage.nl/sitemap.xml',
