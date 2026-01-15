@@ -15,7 +15,7 @@ export default function Error({
   }, [error])
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-sky-100 via-amber-50 to-amber-100">
+    <div className="min-h-screen flex items-center justify-center bg-[#40dacf]">
       <div className="text-center px-6 max-w-lg">
         <h2 className="text-3xl font-semibold text-slate-900 mb-4">
           Er is iets misgegaan
