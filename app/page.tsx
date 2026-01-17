@@ -1,5 +1,7 @@
 'use client';
 
+import { Button } from "@/components/ui/button";
+
 export default function Home() {
   return (
     <>
@@ -39,6 +41,10 @@ export default function Home() {
             <p className="text-xs sm:text-2xl text-slate-700 mb-16 max-w-3xl mx-auto leading-relaxed">
               Stop met zoeken op tientallen websites. Wij verzamelen alle stageplekken voor jou.
             </p>
+
+            <Button asChild>
+              <a href="/stages">Vind je stage</a>
+            </Button>
 
           </div>
         </main>
