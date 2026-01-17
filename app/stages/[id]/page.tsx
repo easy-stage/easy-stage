@@ -19,7 +19,11 @@ import {
   Clock,
   Briefcase,
   CheckCircle2,
-  ExternalLink
+  ExternalLink,
+  ImageIcon,
+  X,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -71,6 +75,8 @@ export default function InternshipDetailPage() {
   const [internship, setInternship] = useState<Internship | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
     async function fetchInternship() {
@@ -133,6 +139,51 @@ export default function InternshipDetailPage() {
     
     if (street && city) return `${street}, ${city}`;
     return street || city || null;
+  };
+
+  // Parse media - handle both array and JSON string
+  const getMedia = () => {
+    if (!internship?.media) return [];
+    
+    let mediaArray = internship.media;
+    
+    // If it's a string, try to parse it
+    if (typeof mediaArray === 'string') {
+      try {
+        mediaArray = JSON.parse(mediaArray);
+      } catch {
+        return [];
+      }
+    }
+    
+    if (!Array.isArray(mediaArray)) return [];
+    
+    // Filter for images only and ensure valid URLs
+    return mediaArray.filter((item: { url?: string; type?: string }) => {
+      if (!item?.url) return false;
+      const typeLC = item.type?.toLowerCase() || '';
+      const isImage = !item.type || typeLC === 'image' || typeLC.startsWith('image/') || /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(item.url);
+      return isImage;
+    });
+  };
+
+  const mediaItems = internship ? getMedia() : [];
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const nextImage = () => {
+    setLightboxIndex((prev) => (prev + 1) % mediaItems.length);
+  };
+
+  const prevImage = () => {
+    setLightboxIndex((prev) => (prev - 1 + mediaItems.length) % mediaItems.length);
   };
 
   if (loading) {
@@ -274,6 +325,99 @@ export default function InternshipDetailPage() {
           </div>
         </div>
       </header>
+
+      {/* Media Gallery */}
+      {mediaItems.length > 0 && (
+        <section className="px-6 sm:px-8 pb-6">
+          <div className="max-w-5xl mx-auto">
+            <Card className="bg-white/90 backdrop-blur border-slate-200/50 overflow-hidden">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <ImageIcon className="h-5 w-5 text-teal-600" />
+                  Foto&apos;s ({mediaItems.length})
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className={`grid gap-3 ${
+                  mediaItems.length === 1 ? 'grid-cols-1' :
+                  mediaItems.length === 2 ? 'grid-cols-2' :
+                  mediaItems.length === 3 ? 'grid-cols-3' :
+                  'grid-cols-2 sm:grid-cols-3 md:grid-cols-4'
+                }`}>
+                  {mediaItems.map((item: { url: string; type?: string }, index: number) => (
+                    <button
+                      key={index}
+                      onClick={() => openLightbox(index)}
+                      className="relative aspect-video rounded-lg overflow-hidden bg-slate-100 hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                    >
+                      <img
+                        src={item.url}
+                        alt={`Afbeelding ${index + 1}`}
+                        className="w-full h-full object-cover"
+                        onError={(e) => { 
+                          e.currentTarget.parentElement!.style.display = 'none';
+                        }}
+                      />
+                    </button>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+      )}
+
+      {/* Lightbox */}
+      {lightboxOpen && mediaItems.length > 0 && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center"
+          onClick={closeLightbox}
+        >
+          {/* Close button */}
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 p-2 text-white/80 hover:text-white transition-colors z-10"
+            aria-label="Sluiten"
+          >
+            <X className="h-8 w-8" />
+          </button>
+
+          {/* Navigation */}
+          {mediaItems.length > 1 && (
+            <>
+              <button
+                onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                className="absolute left-4 p-2 text-white/80 hover:text-white transition-colors z-10"
+                aria-label="Vorige"
+              >
+                <ChevronLeft className="h-10 w-10" />
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                className="absolute right-4 p-2 text-white/80 hover:text-white transition-colors z-10"
+                aria-label="Volgende"
+              >
+                <ChevronRight className="h-10 w-10" />
+              </button>
+            </>
+          )}
+
+          {/* Image */}
+          <img
+            src={mediaItems[lightboxIndex]?.url}
+            alt={`Afbeelding ${lightboxIndex + 1}`}
+            className="max-w-[90vw] max-h-[90vh] object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          {/* Counter */}
+          {mediaItems.length > 1 && (
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 text-sm">
+              {lightboxIndex + 1} / {mediaItems.length}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Content */}
       <main className="px-6 sm:px-8 pb-16">
